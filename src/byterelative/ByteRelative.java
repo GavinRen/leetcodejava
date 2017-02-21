@@ -29,12 +29,58 @@ public class ByteRelative {
        }
        return result;
    }
+   /*
+   * 输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。
+   * */
+   // 常规解法,位运算与
+   public int NumberOf1(int n) {
+       int count = 0;
+       int flag = 1;
+       while(flag != 0){
+           if((n & flag) != 0){
+               count ++;
+           }
+           flag =flag << 1;
+       }
+       return count;
+   }
+    public int NumberOf1s(int n) {
+        int count = 0;
+        while(n !=0){
+            n = (n-1) & n;
+            count ++;
+        }
+        return count;
+    }
+   // 判断一个整数是否为2的整数次方
+   public static boolean isOrNot2M(int data){
+       if(data ==1){
+           return false;
+       }
+       if(((data-1) & data) ==0){
+           return true;
+       } else {
+           return false;
+       }
+   }
+   // 输入两个整数m 和 n,计算需要改变m 的二进制表示中的多少位才能得到n
+   public static int changesNums(int m,int n){
+       int temp = m ^ n;
+       int count =0;
+       while(temp !=0){
+           count ++;
+           temp = (temp - 1)& temp;
+       }
+       return count;
+   }
    public static void main(String[] args){
        ByteRelative br = new ByteRelative();
+       System.out.println(ByteRelative.isOrNot2M(5));
+       System.out.println(ByteRelative.changesNums(10,13));
        int x =10;
        int y =13;
        System.out.println(br.hammingDistance(x,y));
        System.out.println(br.hammingDistance1(x,y));
-       System.out.println(br.reverseBits(43261596));
+//       System.out.println(br.reverseBits(43261596));
    }
 }
