@@ -1,3 +1,5 @@
+import treerelative.TreeNode;
+
 import java.util.ArrayList;
 
 /**
@@ -39,20 +41,30 @@ public class Test {
             return true;
         }
     }
+    public void setInt(int a){
+        a =10;
+    }
+    public void swap0(StringBuilder node){
+        node.append("s");
+    }
     public static void main(String[] args) {
+        int a =5;
         Test t = new Test();
-        System.out.println(t.isOrEven(12));
-        int[] d={1,2,3,4,5,6,7};
-        int[] c = {1,3,5};
-//        d = c;
-        t.reOrderArray(d);
-        for(int element:d){
-            System.out.println(element+"\t");
-        }
-        int x = 11;
-        int y = 15;
-        double zero =0;
-        double test =0.000;
+        t.setInt(a);
+        System.out.println(a);
+//        Test t = new Test();
+//        System.out.println(t.isOrEven(12));
+//        int[] d={1,2,3,4,5,6,7};
+//        int[] c = {1,3,5};
+////        d = c;
+//        t.reOrderArray(d);
+//        for(int element:d){
+//            System.out.println(element+"\t");
+//        }
+//        int x = 11;
+//        int y = 15;
+//        double zero =0;
+//        double test =0.000;
 //        System.out.println(zero == 0.00000000000001);
 //        System.out.println((byte)11);
 //        System.out.println(Integer.toBinaryString(11));
