@@ -41,6 +41,17 @@ public class Test {
             return true;
         }
     }
+    public void swapAll(char[] data,int x,int y){
+        int left =x;
+        int right=y;
+        while(left < right){
+            char temp = data[left];
+            data[left] = data[right];
+            data[right] = data[left];
+            left ++;
+            right--;
+        }
+    }
     public void setInt(int a){
         a =10;
     }
@@ -50,8 +61,13 @@ public class Test {
     public static void main(String[] args) {
         int a =5;
         Test t = new Test();
-        t.setInt(a);
-        System.out.println(a);
+        char[] data ={'a','b','c'};
+        t.swapAll(data,0,2);
+        for(char b : data){
+            System.out.println(b);
+        }
+//        t.setInt(a);
+//        System.out.println(a);
 //        Test t = new Test();
 //        System.out.println(t.isOrEven(12));
 //        int[] d={1,2,3,4,5,6,7};
